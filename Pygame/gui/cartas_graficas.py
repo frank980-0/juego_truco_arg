@@ -1,66 +1,51 @@
 import constantes
 import pygame
 
-# def cargar_cartas():
-#     palos = constantes.PALOS
-#     numeros = constantes.NUMEROS
-
-#     cartas = []
-#     for palo in palos:
-#         for numero in numeros:
-#             ruta = f"pygame/assets/cartas/{numero}_{palo}.jpg"
-#             imagenes = pygame.image.load(ruta)
-#             imagenes = pygame.transform.scale(imagenes, (80, 120))
-#             cartas.append(imagenes)
-    
-#     corriendo = True
-
-#     while corriendo:
-
-#         fondo = pygame.transform.scale(constantes.FONDO, (constantes.ANCHO_PANTALLA, constantes.ALTO_PANTALLA)) #carga y redimensiona la imagen de fondo
-#         for evento in pygame.event.get():
-#             if evento.type == pygame.QUIT:
-#                 corriendo = False
-
-#         constantes.PANTALLA.blit(fondo, (0, 0))
-
-#     # Dibujar las primeras 5 cartas como ejemplo
-#         for i, carta in enumerate(cartas[:5]):
-#             x = 50 + i * 100
-#             y = 200
-#             constantes.PANTALLA.blit(carta, (x, y))
-
-#         pygame.display.flip()
-
-
-def mostrar_mano(cartas_jugador, cartas_rival):
-    """Dibuja las cartas del jugador y del rival en pantalla"""
+def mostrar_mano(cartas_jugador: list, cartas_rival: list)->list:
+    """
+    Dibuja las cartas del jugador y del rival en pantalla,
+    se crea la lista cartas_jugador_rects para manejar el hover
+    """
     corriendo = True
-    # cargar fondo
+    
     fondo = pygame.transform.scale(constantes.FONDO, (constantes.ANCHO_PANTALLA, constantes.ALTO_PANTALLA))
+    
+    cartas_jugador_rects = []
+    for i, carta in enumerate(cartas_jugador):
+        x = 200 + i * 120
+        y = 400
+        rect = pygame.Rect(x, y, 80, 120)
+        cartas_jugador_rects.append((carta, rect))
 
     while corriendo:
+
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
                 corriendo = False
 
-        # dibujar fondo
+        mouse_pos = pygame.mouse.get_pos()
         constantes.PANTALLA.blit(fondo, (0, 0))
 
         # mostrar cartas del jugador (abajo)
-        for i, carta in enumerate(cartas_jugador):
+        for carta, rect in cartas_jugador_rects:
             numero, palo = carta
-            ruta = f"pygame/assets/cartas/{numero}_{palo}.jpg"
+            ruta = constantes.RUTA_CARTA.format(numero=numero, palo=palo)
             img = pygame.image.load(ruta)
             img = pygame.transform.scale(img, (80, 120))
-            x = 200 + i * 120
-            y = 400
-            constantes.PANTALLA.blit(img, (x, y))
+
+            # hover: si el mouse está encima, subo la carta
+
+            draw_rect = rect.copy() # se crea una copia para no modificar el rect original
+            if draw_rect.collidepoint(mouse_pos):
+                draw_rect.y -= 20
+                img = pygame.transform.scale(img, (90, 135))
+
+            constantes.PANTALLA.blit(img, draw_rect)
 
         # mostrar cartas del rival (arriba)
         for i, carta in enumerate(cartas_rival):
             numero, palo = carta
-            ruta = f"pygame/assets/cartas/{numero}_{palo}.jpg"
+            ruta = "pygame/assets/dorso_cartas/dorso.jpg"
             img = pygame.image.load(ruta)
             img = pygame.transform.scale(img, (80, 120))
             x = 200 + i * 120
