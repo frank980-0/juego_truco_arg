@@ -1,7 +1,6 @@
 import pygame
-from assets import *  
-from gui import menu, pedir_nombre, cartas_graficas,salir, ranking
-from Pygame.logica.cartas import repartir_cartas
+from gui import menu, pedir_nombre, cartas_graficas,salir, ranking,partida_grafica
+from logica.cartas import repartir_cartas
 import constantes
 
 pygame.init() 
@@ -13,9 +12,9 @@ if opcion == "jugar":
     nombre  = pedir_nombre.pedir_nombre(constantes.PANTALLA)
     print(f"Nombre del jugador: {nombre}")
     cartas_jugador, cartas_rival = repartir_cartas()
-    cartas_graficas.mostrar_mano(cartas_jugador, cartas_rival)
+    partida_grafica.partida(cartas_jugador, cartas_rival)
     
-     # Por ahora guardamos la partida como si siempre ganara el jugador
+# Por ahora guardamos la partida como si siempre ganara el jugador
     ranking.guardar_partida(nombre, "CPU", ganador="CPU")
 
 elif opcion == "salir":
