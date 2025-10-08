@@ -12,8 +12,8 @@ def mostrar_mano(cartas_jugador: list, cartas_rival: list)->list:
     
     cartas_jugador_rects = []
     for i, carta in enumerate(cartas_jugador):
-        x = 200 + i * 120
-        y = 400
+        x = 250 + i * 120
+        y = 540
         rect = pygame.Rect(x, y, 80, 120)
         cartas_jugador_rects.append((carta, rect))
 
@@ -31,7 +31,7 @@ def mostrar_mano(cartas_jugador: list, cartas_rival: list)->list:
             numero, palo = carta
             ruta = constantes.RUTA_CARTA.format(numero=numero, palo=palo)
             img = pygame.image.load(ruta)
-            img = pygame.transform.scale(img, (80, 120))
+            img = pygame.transform.scale(img, (90, 135))
 
             # hover: si el mouse está encima, subo la carta
 
@@ -47,9 +47,9 @@ def mostrar_mano(cartas_jugador: list, cartas_rival: list)->list:
             numero, palo = carta
             ruta = "pygame/assets/dorso_cartas/dorso.jpg"
             img = pygame.image.load(ruta)
-            img = pygame.transform.scale(img, (80, 120))
-            x = 200 + i * 120
-            y = 50
+            img = pygame.transform.scale(img, (90, 135))
+            x = 250 + i * 120
+            y = 40
             constantes.PANTALLA.blit(img, (x, y))
 
         pygame.display.flip()

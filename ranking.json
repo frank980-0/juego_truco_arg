@@ -1,6 +1,21 @@
 [
     {
-        "jugador": "sas",
+        "jugador": "frANK",
+        "rival": "CPU",
+        "ganador": "CPU"
+    },
+    {
+        "jugador": "fdfs",
+        "rival": "CPU",
+        "ganador": "CPU"
+    },
+    {
+        "jugador": "pepe",
+        "rival": "CPU",
+        "ganador": "CPU"
+    },
+    {
+        "jugador": "ds",
         "rival": "CPU",
         "ganador": "CPU"
     }

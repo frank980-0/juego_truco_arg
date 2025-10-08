@@ -1,13 +1,20 @@
-from . import cartas_mazo
+import constantes
 import random
 
-# repartimos las cartas para el jugador y rival
-
 def repartir_cartas():
+# generamos la lista de cartas con 2 bucles for para palos y numeros
 # generamos las cartas del mazo jugador y rival
 # se utiliza .pop para evitar repetir cartas
+    
+    palos = constantes.PALOS
+    numeros = constantes.NUMEROS       
+    cartas = []
 
-    cartas = cartas_mazo.generar_cartas()
+    for palo in palos:
+        for numero in numeros:
+            cartas.append((numero, palo))     
+
+
     random.shuffle(cartas)
 
     cartas_jugador = [cartas.pop() for _ in range(3)]

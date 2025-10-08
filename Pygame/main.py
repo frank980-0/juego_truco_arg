@@ -1,7 +1,7 @@
 import pygame
-from assets import *
+from assets import *  
 from gui import menu, pedir_nombre, cartas_graficas,salir, ranking
-from logica.jugador_rival import repartir_cartas
+from Pygame.logica.cartas import repartir_cartas
 import constantes
 
 pygame.init() 
