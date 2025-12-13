@@ -21,3 +21,21 @@ AZUL   = (0, 0, 255)
 # Tupla de las cartas
 PALOS = ("copa","oro","basto","espada")
 NUMEROS = (1,2,3,4,5,6,7,10,11,12)
+
+# jerarquia de las cartas para comparar
+VALORES = {
+        (1, "espada"): 14,
+        (1, "basto"): 13,
+        (7, "espada"): 12,
+        (7, "oro"): 11,
+        (3, ""): 10,  # cualquier 3
+        (2, ""): 9,
+        (1, ""): 8,   # 1 de copa u oro
+        (12, ""): 7,
+        (11, ""): 6,
+        (10, ""): 5,
+        (7, ""): 4,
+        (6, ""): 3,
+        (5, ""): 2,
+        (4, ""): 1
+    }

@@ -43,5 +43,50 @@
         "jugador": "bf",
         "rival": "CPU",
         "ganador": "CPU"
+    },
+    {
+        "jugador": "fs",
+        "rival": "CPU",
+        "ganador": "CPU"
+    },
+    {
+        "jugador": "vd",
+        "rival": "CPU",
+        "ganador": "CPU"
+    },
+    {
+        "jugador": "fh",
+        "rival": "CPU",
+        "ganador": "CPU"
+    },
+    {
+        "jugador": "dsad",
+        "rival": "CPU",
+        "ganador": "CPU"
+    },
+    {
+        "jugador": "frank 2",
+        "rival": "CPU",
+        "ganador": "CPU"
+    },
+    {
+        "jugador": "fscsa",
+        "rival": "CPU",
+        "ganador": "CPU"
+    },
+    {
+        "jugador": "lola",
+        "rival": "CPU",
+        "ganador": "CPU"
+    },
+    {
+        "jugador": "fd",
+        "rival": "CPU",
+        "ganador": "CPU"
+    },
+    {
+        "jugador": null,
+        "rival": "CPU",
+        "ganador": "CPU"
     }
 ]

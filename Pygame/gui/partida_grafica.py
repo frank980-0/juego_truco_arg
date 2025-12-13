@@ -1,8 +1,8 @@
 import pygame
-import random
 import constantes
+from logica import jugador_rival 
 
-def partida(cartas_jugador, cartas_rival):
+def partida(cartas_jugador : list, cartas_rival : list):
     corriendo = True
     fondo = pygame.transform.scale(constantes.FONDO, (constantes.ANCHO_PANTALLA, constantes.ALTO_PANTALLA))
 
@@ -36,29 +36,28 @@ def partida(cartas_jugador, cartas_rival):
                 for i, (carta, rect) in enumerate(cartas_jugador_rects):
                     if rect.collidepoint(mouse_pos):
                         carta_jugada_jugador = carta
-                        cartas_jugador_rects.pop(i)
+                        cartas_jugador_rects.pop(i) # devuelve la carta jugada
                         turno = "rival"
                         break
 
-        # turno del rival (bot)
+# turno del rival (bot)
         if turno == "rival" and carta_jugada_jugador is not None:
-            if cartas_rival:
-                carta_rival = random.choice(cartas_rival)
-                cartas_rival.remove(carta_rival)
-                jugadas.append((carta_jugada_jugador, carta_rival))
+            carta_rival = jugador_rival.jugar_carta_rival(cartas_rival)
+            jugadas.append((carta_jugada_jugador, carta_rival))
             carta_jugada_jugador = None
             turno = "jugador"
 
-        # si ambos se quedaron sin cartas, fin
+# si ambos se quedaron sin cartas, fin
         if not cartas_jugador_rects and not cartas_rival:
-            pygame.time.wait(1500)
-            corriendo = False
+            pygame.time.wait(1000)
+
+            corriendo = jugadas
 
         # === DIBUJAR ===
         constantes.PANTALLA.blit(fondo, (0, 0))
         mouse_pos = pygame.mouse.get_pos()
 
-        # Cartas del jugador
+# Cartas del jugador
         for carta, rect in cartas_jugador_rects:
             numero, palo = carta
             ruta = f"pygame/assets/cartas/{numero}_{palo}.jpg"
@@ -72,7 +71,7 @@ def partida(cartas_jugador, cartas_rival):
 
             constantes.PANTALLA.blit(img, draw_rect)
 
-        # Cartas del rival (dorso)
+# Cartas del rival (dorso)
         inicio_rival_x = centro_x - (len(cartas_rival) * espacio_cartas // 2)
         for i in range(len(cartas_rival)):
             ruta = "pygame/assets/dorso_cartas/dorso.jpg"
