@@ -5,7 +5,7 @@ import constantes
 # parte visual de las persistencias del ranking
 
 def mostrar_ranking(pantalla:int):
-    """Muestra el ranking en una ventana de Pygame"""
+    """Muestra el ranking """
     partidas = leer_ranking()
 
     fuente_titulo = pygame.font.SysFont("Arial", 40)

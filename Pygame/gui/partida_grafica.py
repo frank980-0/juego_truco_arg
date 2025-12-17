@@ -50,8 +50,7 @@ def partida(cartas_jugador : list, cartas_rival : list):
 # si ambos se quedaron sin cartas, fin
         if not cartas_jugador_rects and not cartas_rival:
             pygame.time.wait(1000)
-
-            corriendo = jugadas
+            return jugadas
 
         # === DIBUJAR ===
         constantes.PANTALLA.blit(fondo, (0, 0))

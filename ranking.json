@@ -1,92 +1,42 @@
 [
     {
-        "jugador": "frANK",
-        "rival": "CPU",
-        "ganador": "CPU"
-    },
-    {
-        "jugador": "fdfs",
+        "jugador": "sfds",
         "rival": "CPU",
         "ganador": "CPU"
     },
     {
         "jugador": "pepe",
         "rival": "CPU",
-        "ganador": "CPU"
+        "ganador": "jugador"
     },
     {
-        "jugador": "ds",
+        "jugador": "frank",
         "rival": "CPU",
-        "ganador": "CPU"
+        "ganador": "jugador"
     },
     {
-        "jugador": "dg",
+        "jugador": "sds",
         "rival": "CPU",
-        "ganador": "CPU"
-    },
-    {
-        "jugador": "d",
-        "rival": "CPU",
-        "ganador": "CPU"
-    },
-    {
-        "jugador": "fdf",
-        "rival": "CPU",
-        "ganador": "CPU"
-    },
-    {
-        "jugador": "vdgf",
-        "rival": "CPU",
-        "ganador": "CPU"
-    },
-    {
-        "jugador": "bf",
-        "rival": "CPU",
-        "ganador": "CPU"
-    },
-    {
-        "jugador": "fs",
-        "rival": "CPU",
-        "ganador": "CPU"
-    },
-    {
-        "jugador": "vd",
-        "rival": "CPU",
-        "ganador": "CPU"
-    },
-    {
-        "jugador": "fh",
-        "rival": "CPU",
-        "ganador": "CPU"
+        "ganador": "jugador"
     },
     {
         "jugador": "dsad",
         "rival": "CPU",
-        "ganador": "CPU"
-    },
-    {
-        "jugador": "frank 2",
-        "rival": "CPU",
-        "ganador": "CPU"
-    },
-    {
-        "jugador": "fscsa",
-        "rival": "CPU",
-        "ganador": "CPU"
-    },
-    {
-        "jugador": "lola",
-        "rival": "CPU",
-        "ganador": "CPU"
+        "ganador": "rival"
     },
     {
         "jugador": "fd",
         "rival": "CPU",
-        "ganador": "CPU"
+        "ganador": "jugador"
     },
     {
-        "jugador": null,
+        "jugador": "njnjknbv",
         "rival": "CPU",
-        "ganador": "CPU"
+        "ganador": "rival"
+    },
+    {
+        "jugador": "fsd",
+        "rival": "CPU",
+        "ganador": "rival"
     }
 ]
